@@ -1,0 +1,10 @@
+[panel]
+Up=up;i
+Down=down;k
+Enter=right;l;o;enter
+CdParent=left;j;x
+PageUp=pgup;ctrl-u
+PageDown=pgdn;ctrl-d
+Mark=v
+HistoryPrev=ctrl-o
+Search=ctrl-s;alt-s;/
