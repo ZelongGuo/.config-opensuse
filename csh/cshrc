@@ -4,3 +4,5 @@ source ~/.config/csh/aliases.csh
 
 source ~/.config/csh/vim.csh
 
+source ~/.config/csh/gfz.csh
+
