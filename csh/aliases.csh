@@ -1,0 +1,5 @@
+alias vim 'nvim'
+alias vi='nvim'
+# alias ra='ranger'
+# alias ra='ranger --choosedir=$HOME/.rangerdir;LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias tt='tmux new -s zelong'

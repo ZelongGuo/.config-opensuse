@@ -1,0 +1,6 @@
+source ~/.config/csh/env.csh
+
+source ~/.config/csh/aliases.csh
+
+source ~/.config/csh/vim.csh
+
