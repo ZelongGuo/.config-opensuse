@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Zelong Guo
+# @GFZ, Potsdam, 23.04.2023
+
+# this script is used for copying files from the shared folder of my MacBook to the shared folder of this computer.
+
+my_mac="sec14-dynip-186.gfz-potsdam.de:~/shared/*"
+scp ${my_mac} /misc/zs7/Zelong/shared/
+
+# if return 1, it should be a folder:
+if [ "$?" == "1" ]; then
+	scp -r ${my_mac} /misc/zs7/Zelong/shared/
+fi
