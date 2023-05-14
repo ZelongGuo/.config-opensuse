@@ -191,7 +191,7 @@ Plug 'kshenoy/vim-signature'
 " A small plugin for standard output to quickfix window
 " it's good implemetation for GMT, for Python debugging you can install
 " vimspector plugin
-"Plug 'skywind3000/asyncrun.vim'
+Plug 'skywind3000/asyncrun.vim'
 
 " Git
 "Plug 'mhinz/vim-signify'
