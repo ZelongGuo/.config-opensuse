@@ -4,6 +4,7 @@ syntax on
 set number
 set relativenumber
 set cursorline
+set cursorcolumn
 set showcmd
 set wildmenu
 set hlsearch
@@ -12,6 +13,7 @@ set incsearch
 "set ignorecase
 "Mouse is not allowed
 set mouse=
+
 
 noremap j h
 noremap i k
@@ -24,9 +26,15 @@ noremap L 7l
 noremap <C-j> 0
 " go to end of the line
 noremap <C-l> $
+" go to the top of the screen
+noremap <C-i> H 
+" go to the bottom of the screen
+noremap <C-k> L 
+" go to the Middile of the screen
+noremap <C-m> M 
 noremap h i
 noremap H I
-noremap M L
+"noremap M L
 noremap <LEADER><CR> :nohlsearch<CR>
 
 " Insert and Visual mode return Esc
@@ -35,15 +43,15 @@ vnoremap jk <Esc>
 " Auto-completion
 " inoremap " ""<Esc>i
 " Auto backspace when typing double parenthesis
-inoremap "" ""<++><Esc>4hi
-inoremap '' ''<++><Esc>4hi
-inoremap () ()<++><Esc>4hi
-inoremap {} {}<++><Esc>4hi
-inoremap [] []<++><Esc>4hi
-inoremap <> <><++><Esc>4hi
-inoremap ,f <Esc>/<++><CR>:nohlsearch<CR>c4l
-" Press space twice to jump to the next '<++>' and edit it, i.e., place holder
-map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+" inoremap "" ""<++><Esc>4hi
+" inoremap '' ''<++><Esc>4hi
+" inoremap () ()<++><Esc>4hi
+" inoremap {} {}<++><Esc>4hi
+" inoremap [] []<++><Esc>4hi
+" inoremap <> <><++><Esc>4hi
+" inoremap ,f <Esc>/<++><CR>:nohlsearch<CR>c4l
+" " Press space twice to jump to the next '<++>' and edit it, i.e., place holder
+" map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 map s <nop>
 map S :w<CR>
@@ -161,28 +169,30 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
 Plug 'vimwiki/vimwiki'
+
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 
 "++++++++++++++++++++++++++++++ Plugins Settings +++++++++++++++++++++++++++++++
-"======
-" markdown noremap under insert mode
-"======
-autocmd Filetype markdown inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l
-" Bold text
-autocmd Filetype markdown inoremap <buffer> ,b ****<++><left><left><left><left><left><left>
-" Italic text
-autocmd Filetype markdown inoremap <buffer> ,i **<++><left><left><left><left><left>
-" deleted text
-autocmd Filetype markdown inoremap <buffer> ,d ~~~~<++><left><left><left><left><left><left>
-" link
-autocmd Filetype markdown inoremap <buffer> ,a [](<++>)<++><Esc>F[a
-" pictures
-autocmd Filetype markdown inoremap <buffer> ,p ![](<++>)<++><Esc>F[a
-" enter to next line
-"autocmd Filetype markdown inoremap ,p ![](<++>)<++><Esc>F[a
-" Color text
-autocmd Filetype markdown inoremap <buffer> ,c <font color='red'></font><++><Esc>F>F>a
+" "======
+" " markdown noremap under insert mode
+" "======
+" autocmd Filetype markdown inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l
+" " Bold text
+" autocmd Filetype markdown inoremap <buffer> ,b ****<++><left><left><left><left><left><left>
+" " Italic text
+" autocmd Filetype markdown inoremap <buffer> ,i **<++><left><left><left><left><left>
+" " deleted text
+" autocmd Filetype markdown inoremap <buffer> ,d ~~~~<++><left><left><left><left><left><left>
+" " link
+" autocmd Filetype markdown inoremap <buffer> ,a [](<++>)<++><Esc>F[a
+" " pictures
+" autocmd Filetype markdown inoremap <buffer> ,p ![](<++>)<++><Esc>F[a
+" " enter to next line
+" "autocmd Filetype markdown inoremap ,p ![](<++>)<++><Esc>F[a
+" " Color text
+" autocmd Filetype markdown inoremap <buffer> ,c <font color='red'></font><++><Esc>F>F>a
 
 "======
 " vim-table-mode
@@ -193,3 +203,17 @@ map <LEADER>tm :TableModeToggle<CR>
 " vim-snazzy
 "======
 colorscheme snazzy
+
+" ==================== ultisnips ====================
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+
+" if &filetype ==# 'markdown'
+" The folder contains the markdown.snippets, configrations can be refered to: " https://github.com/cold-soda-jay/Markdown-vim
+" if you want use Ultisnips, e.g., in zsh, you can create zsh.snippets under the following directory
+" refer to: https://github.com/honza/vim-snippets/tree/master/UltiSnips
+let g:UltiSnipsSnippetDirectories=['~/.config/vim/']
+let g:UltiSnipsEditSplit="vertical"
+
+
