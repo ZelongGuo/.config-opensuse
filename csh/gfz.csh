@@ -56,7 +56,8 @@ setenv PARAVIEW_PATH /misc/zs7/Zelong/Soft/ParaView-5.9.1-MPI-Linux-Python3.8-64
 setenv PATH {$PATH}:${PARAVIEW_PATH}
 
 ##--------- Coreform Cubit ----------#
-setenv COREFORM_PATH /misc/zs7/Zelong/Soft/Cubit_Trelis/Coreform-Cubit-2021.11/bin/
+ setenv COREFORM_PATH /misc/zs7/Zelong/Soft/Cubit_Trelis/Coreform-Cubit-2021.11/bin/
+# setenv COREFORM_PATH /misc/zs7/Zelong/Soft/Cubit_Trelis/Coreform-Cubit-2023.4/bin/
 setenv PATH {$PATH}:${COREFORM_PATH}
 
 ##--------- Greetings ------------#
