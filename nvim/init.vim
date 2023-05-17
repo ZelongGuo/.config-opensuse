@@ -26,7 +26,9 @@ set autochdir
 set number
 set relativenumber
 set cursorline
-" set cursorcolumn
+set ttimeoutlen=0
+set notimeout
+set cursorcolumn
 set showcmd
 set wildmenu
 set hlsearch
@@ -36,6 +38,7 @@ set incsearch
 "set colorcolumn=100
 "Mouse is not allowed
 set mouse=
+set updatetime=100
 
 noremap j h
 noremap i k
@@ -57,12 +60,17 @@ noremap <C-m> M
 noremap h i
 noremap H I
 "noremap M L
+" Faster in-line navigation
+noremap W 5w
+noremap B 5b
 noremap <LEADER><CR> :nohlsearch<CR>
 
 
 " Insert and Visual mode return Esc
 inoremap jk <Esc>
 vnoremap jk <Esc>
+" Delte a character, same to 'backspace'
+inoremap <C-j> <C-h>
 " The following part of auto-completion about double parenthesis has moved to all.snippets
 " Auto backspace when typing double parenthesis
 " inoremap "" ""<++><Esc>4hi
@@ -78,20 +86,21 @@ vnoremap jk <Esc>
 map s <nop>
 map S :w<CR>
 map Q :q<CR>
-" Here we automatically resize the windowns of iTerm2 and Chrome with the apple script
-map R :call ResizeWindow4MP()<CR>
-map E :call RecoverWindows()<CR>
-"++++++++++++++++++++++++++++++ Self-defining Function ++++++++++++++++++++++++++++++
-func ResizeWindow4MP()
-	exec "silent ! osascript  ~/.config/AppleScript/resize_windows.scpt"
-	exec ":MarkdownPreview"
-	" you can use command + tab to change the current focus to item
-	" exec "silent ! osascript  ~/.config/AppleScript/reactivate_iTerm.scpt"
-endfunc
-func RecoverWindows()
-	exec "silent ! osascript  ~/.config/AppleScript/recover_window.scpt"
-endfunc
-"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+map R :MarkdownPreview<CR>
+" " Here we automatically resize the windowns of iTerm2 and Chrome with the apple script
+" map R :call ResizeWindow4MP()<CR>
+" map E :call RecoverWindows()<CR>
+" "++++++++++++++++++++++++++++++ Self-defining Function ++++++++++++++++++++++++++++++
+" func ResizeWindow4MP()
+" 	exec "silent ! osascript  ~/.config/AppleScript/resize_windows.scpt"
+" 	exec ":MarkdownPreview"
+" 	" you can use command + tab to change the current focus to item
+" 	" exec "silent ! osascript  ~/.config/AppleScript/reactivate_iTerm.scpt"
+" endfunc
+" func RecoverWindows()
+" 	exec "silent ! osascript  ~/.config/AppleScript/recover_window.scpt"
+" endfunc
+" "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 " split the screen, change between window and resize the window
 map sl :set splitright<CR>:vsplit<CR>
@@ -187,10 +196,11 @@ endfunc
 
 call plug#begin('$HOME/.config/nvim/plugged')
 " Color Scheme
-Plug 'ZelongGuo/nvim-deus'
-Plug 'ZelongGuo/eleline.vim'
-Plug 'tpope/vim-fugitive'
-"Plug 'connorholyday/vim-snazzy'
+"Plug 'ZelongGuo/nvim-deus'
+"Plug 'ZelongGuo/eleline.vim'
+"Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'connorholyday/vim-snazzy'
 
 " Auto Complete
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -255,17 +265,17 @@ map <LEADER>tm :TableModeToggle<CR>
 "======
 " vim-snazzy
 "======
-"colorscheme snazzy
+colorscheme snazzy
 
-" ==================== eleline.vim ====================
-let g:eleline_powerline_fonts = 0
-
-" ==================== Dress up my vim ====================
-"set termguicolors 
-" enable true colors support
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" nvim-deus settings
-silent! color deus
+" " ==================== eleline.vim ====================
+" let g:eleline_powerline_fonts = 0
+" 
+" " ==================== Dress up my vim ====================
+" "set termguicolors 
+" " enable true colors support
+" " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" " nvim-deus settings
+" silent! color deus
 
 "hi NonText ctermfg=gray guifg=gray10
 "hi SpecialKey ctermfg=blue guifg=grey70
@@ -285,9 +295,9 @@ let g:mkdp_markdown_css = ''
 let g:mkdp_highlight_css = ''
 
 " ==================== ultisnips ====================
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+let g:UltiSnipsExpandTrigger = "<C-q>"
+let g:UltiSnipsJumpForwardTrigger = "<C-q>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-w>"
 
 " if &filetype ==# 'markdown'
 " The folder contains the markdown.snippets, configrations can be refered to: " https://github.com/cold-soda-jay/Markdown-vim
