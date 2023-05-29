@@ -5,7 +5,7 @@
 #set work = "/misc/zs7/Zelong" 
 set my_shell = "/home/zelong/Desktop/my_shell_scripts/original"
 set SOFT = "/misc/radarsoft/Zelong"
-set conda = "/misc/zs7/Zelong/Soft/conda/etc/profile.d/"
+set conda = "/misc/radarsoft/Zelong/conda/etc/profile.d/conda.csh"
 
 #---------------------- GAMMA version------------------------------------------------
 setenv VERSION_GAMMA GAMMA_SOFTWARE-20200713_ubuntu2004

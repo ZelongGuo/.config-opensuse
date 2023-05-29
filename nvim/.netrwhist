@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/misc/zs7/Zelong/Soft/pylith-2.2.2-linux-x86_64/src/pylith-2.2.2/examples/2d/iraneq/batch-step09'
+let g:netrw_dirhist_1='/misc/zs7/Zelong/Soft/pylith-2.2.2-linux-x86_64/src/pylith-2.2.2/examples/2d/iraneq/batch-step06'

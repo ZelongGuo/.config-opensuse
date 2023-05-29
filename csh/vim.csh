@@ -10,6 +10,7 @@ bindkey -a L end-of-line
 bindkey -a k down-history
 bindkey -a i up-history
 bindkey -a u vi-undo
+#bindkey -a jk vi-cmd-mode
 
 # #bindkey -M vicmd "-" vi-rev-repeat-search
 # bindkey -M vicmd "=" vi-repeat-search
@@ -37,4 +38,4 @@ bindkey -a u vi-undo
 # }
 # precmd_functions+=(_fix_cursor)
 # 
-# KEYTIMEOUT=1
+# setenv KEYTIMEOUT 20
