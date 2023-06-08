@@ -1,4 +1,17 @@
 "++++++++++++++++++++++++++++++ Some VIM Setting ++++++++++++++++++++++++++++++
+"" ___  ___            _                            
+" |  \/  |            (_)                   
+" | .  . |_   _ _   ___ _ __ ___  _ __ ___ 
+" | |\/| | | | \ \ / / | '_ ` _ \| '__/ __|
+" | |  | | |_| |\ V /| | | | | | | | | (__ 
+" \_|  |_/\__, / \_/ |_|_| |_| |_|_|  \___|
+"          __/ |                                 
+"         |___/                                  
+"
+" Author: Zelong Guo @ GFZ, Potsdam
+" Email: zelong.guo@outlook.com 
+"
+"
 let mapleader = " "
 syntax on
 set number
@@ -13,6 +26,7 @@ set incsearch
 "set ignorecase
 "Mouse is not allowed
 set mouse=
+"set updatetime=100
 
 
 noremap j h
@@ -35,6 +49,9 @@ noremap <C-m> M
 noremap h i
 noremap H I
 "noremap M L
+" Faster in-line navigation
+noremap W 5w
+noremap B 5b
 noremap <LEADER><CR> :nohlsearch<CR>
 
 " Insert and Visual mode return Esc
@@ -151,8 +168,12 @@ endfunc
 " delete it under the .vim/plugged directory. 
 
 call plug#begin('~/.vim/plugged')
+" Color Scheme
 Plug 'vim-airline/vim-airline'
-Plug 'connorholyday/vim-snazzy'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'flazz/vim-colorschemes'
+Plug 'Yggdroot/indentLine'
+" Plug 'connorholyday/vim-snazzy'
 
 " Bookmarks
 Plug 'kshenoy/vim-signature'
@@ -199,10 +220,26 @@ call plug#end()
 "======
 map <LEADER>tm :TableModeToggle<CR>
 
-"======
-" vim-snazzy
-"======
-colorscheme snazzy
+"======================= airline themes ================
+let g:airline_theme='angr'
+
+"===================== vim-colorschemes ================
+"colorscheme gruvbox
+"colorscheme material
+colorscheme gruvbox
+
+" colorscheme donbass
+
+
+" ====================== indentline =====================
+let g:indentLine_char = '┆'
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:markdown_syntax_conceal=0
+
+" "======
+" " vim-snazzy
+" "======
+" colorscheme snazzy
 
 " ==================== ultisnips ====================
 let g:UltiSnipsExpandTrigger = "<tab>"

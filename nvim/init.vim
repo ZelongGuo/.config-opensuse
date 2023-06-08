@@ -201,6 +201,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
 "Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'connorholyday/vim-snazzy'
+Plug 'Yggdroot/indentLine'
 
 " Auto Complete
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -266,6 +267,11 @@ map <LEADER>tm :TableModeToggle<CR>
 " vim-snazzy
 "======
 colorscheme snazzy
+
+" ====================== indentline =====================
+let g:indentLine_char = '┆'
+#let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:markdown_syntax_conceal=0
 
 " " ==================== eleline.vim ====================
 " let g:eleline_powerline_fonts = 0
