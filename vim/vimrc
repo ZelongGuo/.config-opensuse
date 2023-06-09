@@ -224,6 +224,7 @@ map <LEADER>tm :TableModeToggle<CR>
 let g:airline_theme='angr'
 
 "===================== vim-colorschemes ================
+set background=dark
 "colorscheme gruvbox
 "colorscheme material
 colorscheme gruvbox
