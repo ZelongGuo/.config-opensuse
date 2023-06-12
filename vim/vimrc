@@ -233,7 +233,7 @@ colorscheme gruvbox
 
 
 " ====================== indentline =====================
-let g:indentLine_char = '┆'
+let g:indentLine_char = '¦'
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:markdown_syntax_conceal=0
 
