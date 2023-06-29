@@ -26,6 +26,10 @@ setenv PATH {$PATH}:$GMTHOME/bin
 setenv PYTHONPATH .:${GAMMA_HOME}:
 #setenv PYTHONPATH .:/misc/gamma/GAMMA_SOFTWARE-20200713_ubuntu2004:
 
+#--------------- GraphTools ---------------
+setenv GRAPHTOOLS_DIR /home/zelong/Desktop/GraphTools/
+setenv PYTHONPATH ${GRAPHTOOLS_DIR}:${PYTHONPATH}
+
 #----- Stamps/TRAIN/PSO/Unicycle --------------
 source /misc/radarsoft/Zelong/TRAIN-master/APS_CONFIG.tcsh
 source /misc/radarsoft/Zelong/StaMPS-master/StaMPS_CONFIG.tcsh
