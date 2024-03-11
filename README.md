@@ -13,3 +13,11 @@ Now I swap the `CapsLock` with `ctrl` in global setting, you need to change it i
 For my computer (mefe9):  
 ![1.png](./img/1.png)
 ![2.png](./img/2.png)
+
+
+### Some notes of linux:
+| keys     | operations         |
+|----------|--------------------|
+| `ctrl +` | increase font size |
+| `ctrl -` | decrease font size |
+| `ctrl 0` | recover font size  |
