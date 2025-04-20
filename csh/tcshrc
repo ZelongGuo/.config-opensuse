@@ -1,0 +1,25 @@
+#ident	"@(#)Cshrc.sh	1.2"	6/20/88
+
+# Try copying the following to .cshrc in your home directory.
+
+
+#
+#
+if ($?LOGNAME == 0) exit
+#
+# das fuer interaktive shells:
+#
+setenv USER $LOGNAME
+set prompt="%M:%c4 [%h] "
+set watch=( any any )
+set correct=cmd
+set history=100
+set nobeep
+set cdpath=(~)
+set ignoreeof
+#bind vi
+#
+
+source ~/.cshrc
+#source ~/.didix_env.csh
+
